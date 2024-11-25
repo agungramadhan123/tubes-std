@@ -36,4 +36,37 @@ void deleteafter(list& L, address& prec, address p) {
 }
 
 /*zikra*/
-
+void insertfirst(list &L, address p){
+    if(L.first == nullptr){
+        L.first = P;
+        L.last = P;
+    }else{
+        p->next = L.first;
+        L.first->prev = p;
+        L.first = p;
+    }
+}
+void insertlast(list &L, address p){
+    if(L.first == nullptr){
+        L.first = p;
+        L.last = p;
+    }else{
+        p->prev = L.last;
+        L.last->next = p;
+        L.last = p;
+    }
+}
+void insertafter(list &L, address prec, address p){
+    if(L.first == nullptr){
+        L.first = p;
+        L.last = p;
+    }else{
+        p->prev = prec;
+        p->next = prec->next;
+        prec->next->prev = p;
+        prec->next = p;
+    }
+}
+void showall(list L){
+    
+}
