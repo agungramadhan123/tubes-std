@@ -16,13 +16,17 @@ struct list {
     address first;
     address last;
 };
+void createlist(list &L);
+address createNewElm(infotype data);
 
-void insertfirst(list& L, address p);
-void insertlast(list& L, address p);
-void insertafter(list& L, address prec, address p);
 void deletefirst(list& L, address& p);
 void deletelast(list& L, address& p);
 void deleteafter(list& L, address& prec, address p);
-void showall(list& L)
+
+/*zikra*/
+void insertfirst(list &L, address p);
+void insertlast(list &L, address p);
+void insertafter(list &L, address prec, address p);
+void showall(list L);
 
 #endif
