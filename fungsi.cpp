@@ -1,6 +1,5 @@
 #include "header.h"
 #include <iostream>
-using namespace std;
 
 void deletefirst(list& L, address& p) {
     p = L.first;
@@ -35,3 +34,6 @@ void deleteafter(list& L, address& prec, address p) {
     p->next = nullptr;
     p->prev = nullptr;
 }
+
+/*zikra*/
+
