@@ -18,6 +18,7 @@ void deletelast(list& L, address& p) {
     p = L.last;
     if (L.first != L.last) {
         L.last = p->prev;
+        p->prev = nullptr;
         L.last->next = nullptr;
     } else {
         L.first = nullptr;
