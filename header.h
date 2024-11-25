@@ -12,7 +12,6 @@ struct elmlist {
     address prev;
 };
 
-
 struct list {
     address first;
     address last;
@@ -25,6 +24,5 @@ void deletefirst(list& L, address& p);
 void deletelast(list& L, address& p);
 void deleteafter(list& L, address& prec, address p);
 void showall(list& L)
-
 
 #endif
