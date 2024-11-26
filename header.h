@@ -14,7 +14,7 @@ struct stack {
     Index top;
 };
 
-
+//aril
 typedef char infotype;
 typedef elmlist* address;
 
