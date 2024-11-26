@@ -29,4 +29,6 @@ void insertlast(list &L, address p);
 void insertafter(list &L, address prec, address p);
 void showall(list L);
 
+testest
+
 #endif
