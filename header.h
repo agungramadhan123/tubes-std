@@ -3,7 +3,7 @@
 #include <iostream> 
 using namespace std;
 
-typedef int infotype;
+typedef char infotype;
 typedef elmlist* address;
 
 struct elmlist {
@@ -29,6 +29,7 @@ void insertlast(list &L, address p);
 void insertafter(list &L, address prec, address p);
 void showall(list L);
 
-testest
-
+// agung 
+void undo();
+void redo();
 #endif
