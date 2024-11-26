@@ -1,7 +1,6 @@
 #ifndef header_h_included
 #define header_h_included
 #include <iostream> 
-#include <algorithm>
 using namespace std;
 typedef int infotype;
 typedef string infotype;
