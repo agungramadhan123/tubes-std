@@ -3,6 +3,7 @@
 #include <iostream> 
 #include <algorithm>
 using namespace std;
+<<<<<<< HEAD
 typedef int infotype;
 typedef string infotype;
 typedef struct elmlist *address;
@@ -15,6 +16,11 @@ struct stack {
     Index top;
 };
 
+=======
+
+typedef char infotype;
+typedef elmlist* address;
+>>>>>>> 479f52d5e236d688270a69e3f138e028c49025ad
 
 struct elmlist {
     infotype info;
@@ -40,6 +46,7 @@ void insertlast(list &L, address p);
 void insertafter(list &L, address prec, address p);
 void showall(list L);
 
+<<<<<<< HEAD
 // agung
 stack create();
 bool isempty(stack s);
@@ -49,4 +56,9 @@ void pop(stack &s,infotype &p);
 void undo(stack &s, infotype x);
 void redo(stack &s,infotype x);
 
+=======
+// agung 
+void undo();
+void redo();
+>>>>>>> 479f52d5e236d688270a69e3f138e028c49025ad
 #endif

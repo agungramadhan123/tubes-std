@@ -1,4 +1,5 @@
 #include "header.h"
+#include <iostream>
 
 void deletefirst(list& L, address& p) {
     p = L.first;
