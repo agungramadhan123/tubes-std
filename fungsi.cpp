@@ -1,5 +1,4 @@
 #include "header.h"
-#include <iostream>
 
 void deletefirst(list& L, address& p) {
     p = L.first;
@@ -38,8 +37,8 @@ void deleteafter(list& L, address& prec, address p) {
 /*zikra*/
 void insertfirst(list &L, address p){
     if(L.first == nullptr){
-        L.first = P;
-        L.last = P;
+        L.first = p;
+        L.last = p;
     }else{
         p->next = L.first;
         L.first->prev = p;
@@ -67,6 +66,40 @@ void insertafter(list &L, address prec, address p){
         prec->next = p;
     }
 }
+
+
+stack create()
+{
+    stack s;
+    s.top=-1;
+    return s;
+}
+bool full(stack s)
+{
+    return s.top == MAXSIZE;
+}
+bool isempty(stack s)
+{
+    return s.top==-1;
+}
+void push(stack &s, infotype p)
+{
+    bool full(stack);
+    if(!full(s)){
+        s.top=s.top+1;
+        s.info[s.top]=p;
+    }
+}
+void pop(stack &s, infotype &p)
+{
+   bool isempty(stack);
+   if(!isempty(s)){
+        p=s.info[s.top];
+        s.top=s.top-1;
+    }
+}
+
+void redo(stack )
 void showall(list L){
     
 }
