@@ -69,38 +69,57 @@ void insertafter(list &L, address prec, address p){
 }
 
 
-stack create()
-{
-    stack s;
-    s.top=-1;
-    return s;
-}
-bool full(stack s)
-{
-    return s.top == MAXSIZE;
-}
-bool isempty(stack s)
-{
-    return s.top==-1;
-}
-void push(stack &s, infotype p)
-{
-    bool full(stack);
-    if(!full(s)){
-        s.top=s.top+1;
-        s.info[s.top]=p;
-    }
-}
-void pop(stack &s, infotype &p)
-{
-   bool isempty(stack);
-   if(!isempty(s)){
-        p=s.info[s.top];
-        s.top=s.top-1;
-    }
+bool isempty(stack s) {
+    return s.top == 0;
 }
 
-void redo(stack )
-void showall(list L){
-    
+bool full(stack s) {
+    return s.top == MAXSIZE ;
+}
+
+void push(stack &s, infotype p) {
+    if (!full(s)) {
+        s.top++;
+        s.info[s.top] = p;
+    } 
+}
+
+void pop(stack &s, infotype &p) {
+    if (!isempty(s)) {
+        p = s.info[s.top];
+        s.top--;
+    }
+}
+void undo(stack &undo, stack &redo, list &L) {
+    if (!isempty(undo)) {
+        infotype currentText;
+        pop(undo, currentText);
+        push(redo, currentText);
+
+        if (!isempty(undo)) {
+            L.first->info = undo.info[undo.top]; 
+        } else {
+            L.first->info = " "; 
+        }
+    } 
+}
+
+void redo(stack &undo, stack &redo, list &L) {
+    if (!isempty(redo)) {
+        infotype nextText;
+        pop(redo, nextText);
+        push(undo, nextText);
+
+        L.first->info = nextText; 
+    } 
+}
+
+
+void showall(list L) {
+    address p = L.first;
+    while (p != nullptr) {
+        cout << p->info << " ";
+        p = p->next;
+    }
+    cout << endl;
 }
