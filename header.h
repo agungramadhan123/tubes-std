@@ -22,8 +22,8 @@ struct elmstack {
 };
 
 struct listStack {
-    adr head = nullptr;
-    adr tail = nullptr;
+    adr head ;
+    adr tail ;
 };
 
 struct stack {
@@ -33,13 +33,13 @@ struct stack {
 
 struct elmlist {
     infotype info;
-    address next = nullptr;
-    address prev = nullptr;
+    address next ;
+    address prev ;
 };
 
 struct list {
-    address first = nullptr;
-    address last = nullptr;
+    address first;
+    address last ;
 };
 
 // aril
