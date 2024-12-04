@@ -22,8 +22,8 @@ struct elmstack {
 };
 
 struct listStack {
-    adr head ;
-    adr tail ;
+    adr head;
+    adr tail;
 };
 
 struct stack {
@@ -33,13 +33,13 @@ struct stack {
 
 struct elmlist {
     infotype info;
-    address next ;
+    address next;
     address prev ;
 };
 
 struct list {
     address first;
-    address last ;
+    address last;
 };
 
 // aril
