@@ -1,6 +1,19 @@
 #include "header.h"
 #include <iostream>
 
+void createlist(list &L) {
+    l.first = nullptr;
+    l.last = nullptr;
+}
+
+address createNewElm(infotype p) {
+    address temp = new elmlist;
+    temp->info = p;
+    temp->next = nullptr;
+    temp->prev = nullptr;
+    return temp;
+}
+
 void deletefirst(list& L, address& p) {
     p = L.first;
     if (L.first != nullptr) {
