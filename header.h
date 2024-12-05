@@ -1,66 +1,42 @@
 #ifndef header_h_included
 #define header_h_included
-
 #include <iostream>
+#include <conio.h>
 #include <string>
-
 using namespace std;
 
 // DLL ADT
-typedef string infotype;
+typedef char infotype;
 typedef struct elmlist *address;
 
 // Stack ADT
 const int MAXSIZE = 100;
-typedef int Index;
-typedef struct elmstack *adr;
-
-struct elmstack {
-    infotype kata;
-    adr next;
-    adr prev;
-};
-
-struct listStack {
-    adr head;
-    adr tail;
-};
-
-struct stack {
-    infotype info[MAXSIZE];
-    Index top = -1;
-};
+typedef string stackElement;
 
 struct elmlist {
     infotype info;
-    address next;
-    address prev ;
+    address next, prev;
 };
 
 struct list {
-    address first;
-    address last;
+    address first, last;
 };
 
-// aril
-void createlist(list &L);
-address createNewElm(infotype p);
-void deletefirst(list &L, address &p);
-void deletelast(list &L, address &p);
-void deleteafter(list &L, address &prec, address p);
-
-// zikra
-void insertfirst(list &L, address p);
-void insertlast(list &L, address p);
-void insertafter(list &L, address prec, address p);
-void showall(list L);
-
-// agung
+struct stack {
+    stackElement info[MAXSIZE];
+    int top = -1;
+};
+address createNewElm(infotype nilai);
+void insertAfter(list &L, address prec, address p);
+void deleteAtCursor(list &L, address &cursor);
+string getText(list &L);
+void printlist(const string &text, int cursorPos);
+void insertNewline(list &L, address &cursor);
+int countWords(const string &text);
 bool isempty(stack s);
 bool full(stack s);
-void push(stack &s, infotype p);
-void pop(stack &s, infotype &p);
+void push(stack &s, stackElement p);
+void pop(stack &s, stackElement &p);
 void undo(stack &undo, stack &redo, list &L);
 void redo(stack &undo, stack &redo, list &L);
-
 #endif
