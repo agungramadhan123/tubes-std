@@ -66,7 +66,7 @@ string getText(list &L) {
     }
     return result;
 }
-int countWords(const string &text) {
+int countWords( string &text) {
     int count = 0;
     bool inWord = false;
     for (char c : text) {
@@ -81,7 +81,7 @@ int countWords(const string &text) {
     }
     return count;
 }
-void printlist(const string &text, int cursorPos) {
+void printlist(string &text, int cursorPos) {
     system("cls");
     cout << "Text Editor (Keyboard Simulation)" << endl;
     cout << "Commands: Backspace (delete), Left (←), Right (→), Undo (ctrl+z), Redo (ctrl+y), Exit (ESC)" << endl;
