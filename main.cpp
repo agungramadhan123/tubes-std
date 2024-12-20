@@ -1,6 +1,7 @@
 #include "header.h"
 
 int main() {
+    string bebas = " ";
     list L = {nullptr, nullptr};
     stack undoStack, redoStack;
     undoStack.top = -1;
@@ -10,7 +11,7 @@ int main() {
     int cursorPos = 0;
 
     push(undoStack, getText(L));
-    printlist("", cursorPos);
+    printlist(bebas,cursorPos);
 
     while (true) {
         input = _getch();
